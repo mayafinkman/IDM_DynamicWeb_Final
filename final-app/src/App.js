@@ -4,10 +4,14 @@ import * as firebase from "firebase/app";
 import "firebase/auth";
 //Pages
 import CreateAccount from "./pages/CreateAccount";
+import Header from "./components/Header";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
-
+import SinglePost from "./pages/SinglePost";
+import CreatePost from './pages/CreatePost';
+//styling
 import "./App.css";
+
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -94,6 +98,7 @@ function App() {
     console.log("form payload", e);
     let email = e.currentTarget.createEmail.value;
     let password = e.currentTarget.createPassword.value;
+    let name = e.currentTarget.createName.value;
     // console.log('email', email);
     // console.log('password', password);
     firebase
@@ -111,9 +116,28 @@ function App() {
 
   return (
     <div className="App">
+      <Header LogoutFunction={LogoutFunction} isLoggedIn={loggedIn} />
       <Router>
-        <Route exact path="/">
-            <Home/>
+      <Route exact path="/">
+          {//!loading &&
+            !loggedIn ? (<Redirect to="/login" />
+            ) : ( 
+                < Home userInformation={userInformation} />)
+          }
+        </Route>
+        <Route exact path="/profile">
+          {//!loading &&
+            !loggedIn ? (<Redirect to="/login" />
+            ) : ( 
+                < CreatePost userInformation={userInformation}/>)
+          }
+        </Route>
+        <Route exact path="/post/:id">
+          {//!loading &&
+            !loggedIn ? (<Redirect to="/login" />
+            ) : (
+                < SinglePost  />)
+          }
         </Route>
         <Route exact path="/login">
           {//!loading &&

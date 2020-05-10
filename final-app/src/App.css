@@ -1,3 +1,89 @@
 .App{
-  
+   
+}
+.Wrapper{
+    margin: 0 auto;
+    max-width: 1040px;
+}
+.SignupForm{
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 40px auto;
+}
+
+SignupForm input{
+    margin-bottom: 30px;
+}
+
+.Header{
+    width:100%;
+    border-bottom: 1px solid black;
+}
+.Header_Wrapper{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px 25px;
+    max-width: 1040px;
+    margin: 0 auto;
+}
+.Header_Logo img{
+    width: 200px;
+}
+.Header__nav a{
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 10px;
+    padding: 2px 5px;
+    transition: border-bottom 200ms ease;
+}
+.Header__nav a:hover{
+    border-bottom: 1px solid black;
+  }
+.Header_nav a:last-type-of{
+    margin-right: 0;
+    padding-right: 0;
+}
+.Form{
+    display: flex;
+    flex-direction: column;
+
+}
+.Form label{
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+    opacity: 0.7 ;
+}
+.Form input{
+    font-size: 16px;
+    padding: 8px 5px;
+    margin-bottom: 20px;
+}
+.Form button{
+    padding: 10px 5px;
+    font-size: 16px;
+}
+.CreateWrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.CreateWrapper >div, CreateWrapper > form{
+    flex-basis: 50%;
+    width:100%;
+}
+
+.CreateInformation{
+    padding-left: 50px;
+}
+.LoginForm{
+    margin: 0;
+    max-width: 500px;
+    
 }
