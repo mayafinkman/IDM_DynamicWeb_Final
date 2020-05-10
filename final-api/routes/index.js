@@ -8,6 +8,8 @@ const db = firebase.firestore();
 const posts = db.collection("posts");
 
 router.get("/", (req, res) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     const postsArray = [];
     posts
         .get()

@@ -17,12 +17,16 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 const indexRoute = require("./routes/index.js");
-
+const singlePostRoute = require("./routes/singlePost.js");
+const createPostRoute = require("./routes/createPost.js");
 //serve static files
 app.use("/static", express.static("public"));
 
 //routing in express
 app.use("/", indexRoute);
+app.use("/posts", singlePostRoute);
+app.use("/create", createPostRoute);
+
 
 app.listen(port, () => console.log("Final Project API is running"));
 
