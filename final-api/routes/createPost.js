@@ -9,14 +9,15 @@ const posts = db.collection("posts");
 // /create
 router.get("/", (req, res) => {
     res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 
     const queryParams = req.query;
+
     posts
         .doc(queryParams.id)
         .set(queryParams)
         .then(function (doc) {
-            res.send({success: "successful submission"} );
+            res.send("<h1>Submission Successful</h1><p><a href='/profile'>Create another post</a></p>");
         })
         .catch(function (error) {
         console.log("Error", error);

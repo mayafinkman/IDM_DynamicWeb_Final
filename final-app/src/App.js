@@ -108,7 +108,7 @@ function App() {
         setLoggedIn(true);
       })
       .catch(function (e) {
-        console.log("CREATE ACCOUNT ERROR");
+        console.log("CREATE ACCOUNT ERROR", e);
       })
   }
   if (loading) return null;
