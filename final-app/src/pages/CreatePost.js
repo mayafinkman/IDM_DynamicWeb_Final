@@ -13,13 +13,14 @@ function CreatePost({ userInformation }) {
         const idFromText = text.replace(/\s+/g, "-").toLowerCase().substr(0, 16);
         let userId = uID;
         let postTitle = e.currentTarget.postTitle.value;
+        let postUserName = e.currentTarget.postName.value;
             axios.get(
                 //local
-                `http://localhost:4000/create?text=${text}&id=${idFromText}&userId=${userId}&title=${postTitle}`
+                //`http://localhost:4000/create?text=${text}&id=${idFromText}&userId=${userId}&title=${postTitle}&name=${postUserName}`
                 //production
-                //heroku link
+                `https://peaceful-thicket-79386.herokuapp.com/create?text=${text}&id=${idFromText}&userId=${userId}&title=${postTitle}&name=${postUserName}`
             )
-                .then(function(response){
+                .then(function (response) {
                     console.log('response', response);
                 })
                 .catch(function(error) {
@@ -30,7 +31,7 @@ function CreatePost({ userInformation }) {
 
 
     return <div className="Wrapper">
-         <h1>Welcome, {email} </h1>
+         <h1 class="Welcome">Welcome, {email} </h1>
             <div className="CreatePost">
                 <h2> Add a post</h2>
                 <CreatePostForm createPostFunction={createPostFunction}/>

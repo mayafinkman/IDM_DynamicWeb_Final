@@ -48,16 +48,16 @@ function App() {
   // Cheack to see if user is logged in
   //user loads page, check their status, set state accordingly
   useEffect(() => {
-    firebase.auth().onAuthStateChanged(function(user) {
+    firebase.auth().onAuthStateChanged(function (user) {
       //logged in
       if (user) {
-        setLoggedIn(true);
         setUserInformation(user);
+        setLoggedIn(true);
       }
       //not logged in
       else {
-        setLoggedIn(false);
         setUserInformation({});
+        setLoggedIn(false);
       }
       setLoading(false);
     })
@@ -95,10 +95,9 @@ function App() {
   //create account
   function CreateAccountFunction(e) {
     e.preventDefault(); //prevents form from submitting as default form
-    console.log("form payload", e);
+    //console.log("form payload", e);
     let email = e.currentTarget.createEmail.value;
     let password = e.currentTarget.createPassword.value;
-    let name = e.currentTarget.createName.value;
     // console.log('email', email);
     // console.log('password', password);
     firebase
@@ -132,7 +131,7 @@ function App() {
                 < CreatePost userInformation={userInformation}/>)
           }
         </Route>
-        <Route exact path="/post/:id">
+        <Route exact path="/posts/:id">
           {//!loading &&
             !loggedIn ? (<Redirect to="/login" />
             ) : (

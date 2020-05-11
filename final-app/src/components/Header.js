@@ -7,7 +7,9 @@ function Header({ LogoutFunction, isLoggedIn }) {
         <header className="Header">
             <div className="Header_Wrapper">
                 <div className="Header_Logo">
-                    <img src={logo}></img>
+                    <a href="/">
+                        <img src={logo}></img>
+                    </a>
                 </div>
                 <nav className="Header__nav">
                     {isLoggedIn && <a href="/profile">Post Something!</a>}

@@ -9,9 +9,9 @@ function SinglePost() {
     useEffect(() => {
         axios.get(
             //local
-            `http://localhost:4000/posts/${id}`
+            //`http://localhost:4000/posts/${id}`
             //production
-            //heroku link
+            `https://peaceful-thicket-79386.herokuapp.com/posts/${id}`
         )
             .then(function(response){
                 setPostData(response.data);
@@ -22,8 +22,10 @@ function SinglePost() {
     }, []);
 
     return (
-        <div className="SinglePost Wrapper">
-            <p>${postData}</p>
+        <div className="SinglePostWrapper">
+            <h1>{postData.title}</h1>
+            <h3>By {postData.name}</h3>
+            <p>{postData.text}</p>
         </div>
     )
 }

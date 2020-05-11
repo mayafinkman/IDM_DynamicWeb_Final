@@ -1,21 +1,10 @@
 .App{
-   
+
 }
 .Wrapper{
     margin: 0 auto;
     max-width: 1040px;
 }
-.SignupForm{
-    display: flex;
-    flex-direction: column;
-    max-width: 400px;
-    margin: 40px auto;
-}
-
-SignupForm input{
-    margin-bottom: 30px;
-}
-
 .Header{
     width:100%;
     border-bottom: 1px solid black;
@@ -38,10 +27,11 @@ SignupForm input{
     font-weight: bold;
     margin: 0 10px;
     padding: 2px 5px;
-    transition: border-bottom 200ms ease;
+    transition: border 200ms ease;
 }
 .Header__nav a:hover{
-    border-bottom: 1px solid black;
+    border: 1px solid black;
+    font-size: 19px;
   }
 .Header_nav a:last-type-of{
     margin-right: 0;
@@ -54,6 +44,7 @@ SignupForm input{
 }
 .Form label{
     margin-bottom: 5px;
+    margin-bottom: 5px;
     text-transform: uppercase;
     font-size: 12px;
     font-weight: bold;
@@ -61,12 +52,29 @@ SignupForm input{
 }
 .Form input{
     font-size: 16px;
-    padding: 8px 5px;
+    padding: 10px 10px;
     margin-bottom: 20px;
+    background-color:#F9F3EA;
+    border: 1px solid black;
+}
+.Form textarea{
+    font-size: 16px;
+    height: 300px;
+    vertical-align: text-top;
+    margin-bottom: 10px;
+    resize: none;
+    background-color:#F9F3EA;
+    border: 1px solid black;
 }
 .Form button{
     padding: 10px 5px;
     font-size: 16px;
+    width: 15%;
+    float: right;
+    background-color:#F9F3EA;
+}
+.Form button:hover{
+    background-color:#FAE7BE;
 }
 .CreateWrapper{
     display: flex;
@@ -82,8 +90,70 @@ SignupForm input{
 .CreateInformation{
     padding-left: 50px;
 }
+.CreateInformation img{
+   margin: auto;
+   justify-content: center;
+}
 .LoginForm{
     margin: 0;
     max-width: 500px;
     
+}
+.SinglePostWrapper{
+    max-width: 1040px; 
+    margin: auto;
+    display: block;
+    justify-content: center;
+}
+.SinglePostWrapper h1{
+    text-align: center;
+}
+.SinglePostWrapper p{
+    line-height: 1.5;
+}
+
+.Welcome{
+    display: flex;
+    justify-content: center;
+}
+
+.allPosts_Title {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    transition: border-bottom 200ms ease;
+    font-size: 20px;
+}
+.allPosts_Title {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    transition: border-bottom 200ms ease;
+    font-size: 25px;
+}
+.keepReading{
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    transition: border-bottom 200ms ease;
+}
+.allPosts p{
+    line-height: 1.5;
+}
+.allPosts a:hover{
+    border-bottom: 1px solid blueviolet;
+  }
+.SignupForm{
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 40px auto;
+}
+
+.SignupForm input{
+    margin-bottom: 30px;
+}
+
+.SignupForm button{
+    width: 50%;
 }

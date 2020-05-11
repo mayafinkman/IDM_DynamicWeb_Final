@@ -2,13 +2,11 @@ import React from 'react';
 function CreateAccountForm({CreateAccountFunction}) {
     return <div>
         <form className="Form SignupForm" onSubmit={(e) =>CreateAccountFunction(e)}>
-            <label htmlFor="username">Name</label>
-            <input type="username" name="createName" />
             <label htmlFor="createEmail">Email</label>
             <input type="email" name="createEmail" />
             <label htmlFor="createPassword">Password</label>
             <input type="password" name="createPassword" />
-            <button>Create Account</button>
+            <button className="SignUpButton">Create Account</button>
         </form>
     </div>;
 }
